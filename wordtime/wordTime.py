@@ -27,6 +27,7 @@ def fuzzyTime():
     # wish python had switch/case statements
     if minutes >= 55 + minAdj:
         suffix = "o'clock"
+        hours += 1
     elif minutes >= 50 + minAdj:
         prefix = "ten to"
         hours += 1 # Becouse it's *to* the next hour
