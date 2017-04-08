@@ -6,11 +6,13 @@ Install dependencies and package with:
 
 Dependencies:
 <br />`pyobjc` & `rumps`
+for macOS menubar interaction.
 
-Do not use standard python that comes with the OS, install python ~2.7 with pip usually in `/usr/local/bin/python`, for example python from the brew package manager, e.g. `brew install python`
+Do not use standard python that comes with macOS, install python ~2.7 with pip usually in `/usr/local/bin/python`, for example python from the brew package manager, e.g. `brew install python`
 
-To stop `wordtime` press the item and press 'Quit', if not to unload `wordtime` use `launchctl unload ~/Library/LaunchAgents/com.wordtime.autorun.plist`
+To stop `wordtime` press the item and press 'Quit', if not to unload `wordtime` use:<br />
+`launchctl unload ~/Library/LaunchAgents/com.wordtime.autorun.plist`
 
-To start the menu bar item from the terminal simply write `wordtime` in your terminal, make sure to have `/usr/local/bin/` in your `PATH`
+To start the menu bar item from the terminal simply write `wordtime` in your terminal, make sure to have `/usr/local/bin/` in your `PATH`, This is only for macOS, if you installed it wordtime on another OS, remove `/usr/local/bin/wordtime` as this executable will only work on macOS.
 
-To run it in the terminal run `python terminal.py` this doesn't need any of the dependencies.
+If you are using another OS, to run it in the terminal run `python terminal.py` this doesn't need any of the dependencies and works only when in the same directory as the `wordtime` folder or you have installed it through `python setup.py install`.
