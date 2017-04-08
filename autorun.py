@@ -36,5 +36,4 @@ os.rename(plistName, plistNewPath)
 print("Running command 'launchctl load -w " + plistNewPath + "' to enable the wordtime on login.\n")
 subprocess.call(["launchctl", "load", "-w", plistNewPath])
 
-# print("Starting programme now... ('launchctl start " + plistName + "')\n")
-# subprocess.call(["launchctl", "start", plistName])
+print("If 'service already loaded' then run the command:\n\nlaunchctl start " + plistLabel + "\n")
