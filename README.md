@@ -2,7 +2,9 @@
 A macOS menu bar item which tells the time in words.
 
 Install dependencies and package with:
-`python setup.py install`
+<br />`python setup.py install`
 
 Dependencies:
-`pyobjc` & `rumps`
+<br />`pyobjc` & `rumps`
+
+To run it in the terminal run `terminal.py` this doesn't need any of the dependencies.
