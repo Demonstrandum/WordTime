@@ -7,4 +7,4 @@ Install dependencies and package with:
 Dependencies:
 <br />`pyobjc` & `rumps`
 
-To run it in the terminal run `terminal.py` this doesn't need any of the dependencies.
+To run it in the terminal run `python terminal.py` this doesn't need any of the dependencies.
