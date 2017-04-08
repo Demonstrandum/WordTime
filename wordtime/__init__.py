@@ -1,0 +1,2 @@
+import menubar
+menubar.main()
