@@ -8,6 +8,9 @@ Dependencies:
 <br />`pyobjc` & `rumps`
 for macOS menubar interaction.
 
+![Image of menubar](https://cloud.githubusercontent.com/assets/26842759/24832420/dd17b148-1ca7-11e7-84c0-f1acb231665a.png)
+
+
 Do not use standard python that comes with macOS, install python ~2.7 with pip usually in `/usr/local/bin/python`, for example python from the brew package manager, e.g. `brew install python`
 
 To stop `wordtime` press the item and press 'Quit', if not, then unload `wordtime` by using: <br />
