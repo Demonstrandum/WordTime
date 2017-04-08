@@ -2,33 +2,7 @@
 from setuptools import setup, find_packages
 from codecs import open
 from os import path
-
-# ======TODO======
-# copy bin file(s) to /usr/local/bin/
-# ================
-# copy PLIST to a new file named
-# wordtime.plist in /System/Library/LaunchAgents
-# ================
-
-PLIST = '''\
-<?xml version="1.0" encoding="UTF-8"?>
-<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
-<plist version="1.0">
-<dict>
-    <key>Label</key>
-    <string>Demonstrandum.python.script.WordTime</string>
-    <key>ProgramArguments</key>
-    <array>
-        <string>/path/to/python</string>
-        <string>/path/to/python/script.py</string>
-    </array>
-    <key>StandardErrorPath</key>
-    <string>/var/log/python_script.error</string>
-    <key>KeepAlive</key>
-    <true/>
-</dict>
-</plist>
-'''
+import os, stat
 
 here = path.abspath(path.dirname(__file__))
 
@@ -50,3 +24,24 @@ setup(
     packages=find_packages(),
     install_requires=['rumps', 'pyobjc'],
 )
+
+binName = 'tmpwordtimebin'
+
+binCont = '''\
+#!/usr/local/bin/python
+from wordtime import menubar
+menubar.main()
+'''
+
+print("Making and writing to bin file '" + binName + "'...\n")
+binFile = open(binName, 'w')
+binFile.write(binCont)
+binFile.close()
+
+print("Making file executable...\n")
+binStat = os.stat(binName)
+os.chmod(binName, binStat.st_mode | stat.S_IEXEC)
+
+binNewPath = '/usr/local/bin/wordtime'
+print("Moving bin file to bin directory with name: " + binNewPath + "'...\n")
+os.rename(binName, binNewPath)
