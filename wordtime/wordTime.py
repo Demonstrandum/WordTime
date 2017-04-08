@@ -23,24 +23,25 @@ def fuzzyTime():
     prefix = "none"
     suffix = "none"
 
+    minAdj = -2
     # wish python had switch/case statements
-    if minutes >= 55:
+    if minutes >= 55 + minAdj:
         suffix = "o'clock"
-    elif minutes >= 50:
+    elif minutes >= 50 + minAdj:
         prefix = "ten to"
         hours += 1 # Becouse it's *to* the next hour
-    elif minutes >= 45 and minutes > 40:
+    elif minutes >= 45 + minAdj and minutes > 40 + minAdj:
         prefix = "quarter to"
         hours += 1
-    elif minutes >= 30 and minutes > 25:
+    elif minutes >= 30 + minAdj and minutes > 25 + minAdj:
         prefix = "half-past"
-    elif minutes >= 20 and minutes > 15:
+    elif minutes >= 20 + minAdj and minutes > 15 + minAdj:
         prefix = "twenty past"
-    elif minutes >= 15 and minutes > 10:
+    elif minutes >= 15 + minAdj and minutes > 10 + minAdj:
         prefix = "quarter past"
-    elif minutes >= 10 and minutes >  5:
+    elif minutes >= 10 + minAdj and minutes >  5 + minAdj:
         prefix = "ten past"
-    elif minutes >= 5 and minutes > 3:
+    elif minutes >= 5 + minAdj and minutes > 3 + minAdj:
         prefix = "five to"
         hours += 1
     else:
