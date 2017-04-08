@@ -42,8 +42,7 @@ def fuzzyTime():
     elif minutes >= 10 + minAdj and minutes >  5 + minAdj:
         prefix = "ten past"
     elif minutes >= 5 + minAdj and minutes > 3 + minAdj:
-        prefix = "five to"
-        hours += 1
+        prefix = "five past"
     else:
         suffix = "o'clock" #...?
 
