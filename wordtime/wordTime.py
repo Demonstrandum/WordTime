@@ -46,7 +46,9 @@ def fuzzyTime():
     else:
         suffix = "o'clock" #...?
 
-
+    if hour == 13:
+        hour = 1
+    
     hours = wordHour(hours)
 
     if suffix == "none":
