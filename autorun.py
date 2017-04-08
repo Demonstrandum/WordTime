@@ -16,7 +16,7 @@ plistCont = '''\
         <string>/usr/local/bin/wordtime</string>
     </array>
     <key>StandardErrorPath</key>
-    <string>/Users/pink/launchctlERR.log</string>
+    <string>/dev/null</string>
 
     <key>RunAtLoad</key>
     <true/>
