@@ -9,3 +9,8 @@ Thumbs.db
 
 # Compiled python files
 *.pyc
+
+# install files
+WordTime.egg-info/
+build/
+dist/
