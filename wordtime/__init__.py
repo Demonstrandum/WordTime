@@ -1,2 +1,2 @@
 import menubar
-menubar.main()
+#menubar.main()
