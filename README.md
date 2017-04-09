@@ -16,6 +16,7 @@ for macOS menubar interaction.
 
 ## Start on login (autorun)
 <div id="autorun"></div>
+
 Use `autorun.py` after having installed through  `setup.py` to enable the automatic start of WordTime. Run the command `python autorun.py enable` in your terminal to enable WordTime on login. To disable WordTime autorun, run `python autorun.py disable`, then you can always reenable it again.
 
 ## Notice
@@ -25,6 +26,7 @@ To stop `wordtime` press the item and press 'Quit'.
 
 #### Start from terminal or use in terminal
 <div id="terminal"></div>
+
 To start the menu bar item from the terminal simply write `wordtime` or `wordtime &` to run it int the background in your terminal, make sure to have `/usr/local/bin/` in your `PATH`, This is only for macOS, if you installed it wordtime on another OS, remove `/usr/local/bin/wordtime` as this executable will only work on macOS.
 
 ##### Other OS
