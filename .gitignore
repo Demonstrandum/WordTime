@@ -6,6 +6,7 @@
 .Trashes
 ehthumbs.db
 Thumbs.db
+*.swp
 
 # Compiled python files
 *.pyc
@@ -15,3 +16,6 @@ WordTime.egg-info/
 build/
 dist/
 *.app/
+
+# Python files
+.pypirc
