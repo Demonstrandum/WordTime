@@ -14,8 +14,8 @@ for macOS menubar interaction.
 
 ![Image of menubar](https://cloud.githubusercontent.com/assets/26842759/24832420/dd17b148-1ca7-11e7-84c0-f1acb231665a.png)
 
-<div id="autorun"></div>
 ## Start on login (autorun)
+<div id="autorun"></div>
 Use `autorun.py` after having installed through  `setup.py` to enable the automatic start of WordTime. Run the command `python autorun.py enable` in your terminal to enable WordTime on login. To disable WordTime autorun, run `python autorun.py disable`, then you can always reenable it again.
 
 ## Notice
