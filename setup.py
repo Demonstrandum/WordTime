@@ -31,7 +31,7 @@ if sys.argv[firstArg] == 'install':
     binNewPath = '/usr/local/bin/wordtime'
     binCont = '''\
 #!/usr/local/bin/python
-# Hid the ugly python rocketship icon from the Dock.
+# Hide the ugly python rocketship icon from the Dock.
 import AppKit
 info = AppKit.NSBundle.mainBundle().infoDictionary()
 info["LSBackgroundOnly"] = "1"
