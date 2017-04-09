@@ -14,4 +14,4 @@ Thumbs.db
 WordTime.egg-info/
 build/
 dist/
-WordTime.app/
+.app/
