@@ -1,0 +1,3 @@
+include LICENSE
+include autorun.py
+include README.md
