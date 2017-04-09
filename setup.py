@@ -13,10 +13,10 @@ setup(
     url='https://github.com/Demonstrandum/WordTime',
     author='Demonstrandum',
     author_email='knutsen@jetspace.co',
-    license='None',
+    license='GPL-3.0',
     classifiers=[
         'Development Status :: 3 - Alpha',
-        'Intended Audience :: Anyone',
+        'Intended Audience :: End Users/Desktop',
         'Operating System :: MacOS :: MacOS X',
         'Programming Language :: Python :: 2',
     ],
