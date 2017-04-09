@@ -1,5 +1,5 @@
 import os, subprocess
-import stat
+import stat, sys
 
 plistLabel = 'com.wordtime.autorun'
 plistName  = 'com.wordtime.autorun.plist'
@@ -23,17 +23,27 @@ plistCont = '''\
 </dict>
 </plist>
 '''
-
-print("Making and writing to .plist file '" + plistName + "'...\n")
-plistFile = open(plistName, 'w')
-plistFile.write(plistCont)
-plistFile.close()
-
 plistNewPath = os.path.expanduser('~') + '/Library/LaunchAgents/com.wordtime.autorun.plist'
-print("Moving plist file to new directory with name: " + plistNewPath + "'...\n")
-os.rename(plistName, plistNewPath)
 
-print("Running command 'launchctl load -w " + plistNewPath + "' to enable the wordtime on login.\n")
-subprocess.call(["launchctl", "load", "-w", plistNewPath])
+if sys.argv[len(sys.argv) - 1] == 'enable':
+    print("Making and writing to .plist file '" + plistName + "'...\n")
+    plistFile = open(plistName, 'w')
+    plistFile.write(plistCont)
+    plistFile.close()
 
-print("If 'service already loaded' then run the command:\n\nlaunchctl start " + plistLabel + "\n")
+    print("Moving plist file to new directory with name: " + plistNewPath + "'...\n")
+    os.rename(plistName, plistNewPath)
+
+    print("Running command 'launchctl load -w " + plistNewPath + "' to enable the wordtime on login.\n")
+    subprocess.call(["launchctl", "load", "-w", plistNewPath])
+
+    print("If 'service already loaded' then run the command:\n\nlaunchctl start " + plistLabel + "\n")
+elif sys.argv[len(sys.argv) - 1] == 'disable':
+    print("Stopping...")
+    subprocess.call(["launchctl", "stop", plistLabel])
+    print("Disabling .plist using 'launchctl unload " + plistNewPath + "'\n")
+    subprocess.call(["launchctl", "unload", plistNewPath])
+    print("Removing .plist\n")
+    os.remove(plistNewPath)
+else:
+    print("Please supply (valid) command line argument, such as:\n'python autorun.py enable' or 'python autorun.py disable'")
