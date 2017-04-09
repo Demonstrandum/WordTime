@@ -28,13 +28,16 @@ setup(
 firstArg = len(sys.argv) - 1
 if sys.argv[firstArg] == 'install':
     binName = 'tmpwordtimebin'
-
+    binNewPath = '/usr/local/bin/wordtime'
     binCont = '''\
-    #!/usr/local/bin/python
-    from wordtime import menubar
-    menubar.main()
-    '''
-
+#!/usr/local/bin/python
+from wordtime import menubar
+menubar.main()
+'''
+    try:
+        os.remove(binNewPath)
+    except:
+        pass
     print("Making and writing to bin file '" + binName + "'...\n")
     binFile = open(binName, 'w')
     binFile.write(binCont)
@@ -44,6 +47,5 @@ if sys.argv[firstArg] == 'install':
     binStat = os.stat(binName)
     os.chmod(binName, binStat.st_mode | stat.S_IEXEC)
 
-    binNewPath = '/usr/local/bin/wordtime'
     print("Moving bin file to bin directory with name: " + binNewPath + "'...\n")
     os.rename(binName, binNewPath)
