@@ -7,6 +7,32 @@
 ehthumbs.db
 Thumbs.db
 *.swp
+*.ini
+
+# Compiled files
+*.com
+*.class
+*.dll
+*.exe
+*.o
+*.so
+
+# Packages
+*.7z
+*.dmg
+*.gz
+*.iso
+*.jar
+*.rar
+*.tar
+*.zip
+
+# Debug logs and databases
+*.log
+*.sql
+*.sqlite
+
+
 
 # Compiled python files
 *.pyc
