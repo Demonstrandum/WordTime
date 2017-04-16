@@ -8,7 +8,7 @@ class MenuBar(rumps.App):
 
 def refresh(self):
     threading.Timer(10, refresh, [self, ]).start()
-    self.title = str(wordTime.fuzzyTime())
+    self.title = wordTime.fuzzyTime()
 
 def main():
     MenuBar().run()
