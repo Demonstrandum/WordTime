@@ -2,7 +2,7 @@ import os, subprocess
 import stat, sys
 
 plistLabel = 'com.wordtime.autorun'
-plistName  = 'com.wordtime.autorun.plist'
+plistName  = plistLabel + '.plist'
 
 plistCont = '''\
 <?xml version="1.0" encoding="UTF-8"?>
@@ -23,9 +23,9 @@ plistCont = '''\
 </dict>
 </plist>
 '''
-plistNewPath = os.path.expanduser('~') + '/Library/LaunchAgents/com.wordtime.autorun.plist'
+plistNewPath = os.path.expanduser('~') + '/Library/LaunchAgents/' + plistName
 
-if sys.argv[len(sys.argv) - 1] == 'enable':
+if sys.argv[len(sys.argv) - 1].lower() == 'enable':
     print("Making and writing to .plist file '" + plistName + "'...\n")
     plistFile = open(plistName, 'w')
     plistFile.write(plistCont)
@@ -38,7 +38,7 @@ if sys.argv[len(sys.argv) - 1] == 'enable':
     subprocess.call(["launchctl", "load", "-w", plistNewPath])
 
     print("If 'service already loaded' then run the command:\n\nlaunchctl start " + plistLabel + "\n")
-elif sys.argv[len(sys.argv) - 1] == 'disable':
+elif sys.argv[len(sys.argv) - 1].lower() == 'disable':
     print("Stopping...")
     subprocess.call(["launchctl", "stop", plistLabel])
     print("Disabling .plist using 'launchctl unload " + plistNewPath + "'\n")
