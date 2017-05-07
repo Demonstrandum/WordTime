@@ -40,8 +40,12 @@ def fuzzyTime():
     elif minutes >= 40 + minAdj:
         prefix = "twenty to"
         hours += 1
+    elif minutes >= 35 + minAdj:
+        prefix = "five past half-past"
     elif minutes >= 30 + minAdj:
         prefix = "half-past"
+    elif minutes >= 25 + minAdj:
+        prefix = "twenty-five past"
     elif minutes >= 20 + minAdj:
         prefix = "twenty past"
     elif minutes >= 15 + minAdj:
@@ -51,17 +55,17 @@ def fuzzyTime():
     elif minutes >=  5 + minAdj:
         prefix = "five past"
     else:
-        suffix = "o'clock" #...?
+        suffix = "o'clock" # If it's not more than or equal to 5 (+minAdj = 3) it must be less so it's close to 0 min, so just say "o'clock"
 
-    if hours == 13:
+    if hours == 13: # When printing next hour at 12, 12 might become 13 to say it's 'to' the NEXT hour which means we need to fix it to become 1
         hours = 1
 
     hours = wordHour(hours)
 
     if suffix == "none":
-        words = prefix + " " + str(hours)
+        words = prefix + " " + hours
     else:
-        words = str(hours) + " " + suffix
+        words = hours + " " + suffix
 
     if time.strftime("%p") == "PM":
         words += ", in the afternoon."
