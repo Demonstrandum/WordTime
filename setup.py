@@ -25,8 +25,8 @@ setup(
     install_requires=['rumps', 'pyobjc'],
 )
 
-firstArg = len(sys.argv) - 1
-if sys.argv[firstArg] == 'install':
+lastArgv = len(sys.argv) - 1
+if sys.argv[lastArgv] == 'install':
     binName = 'tmpwordtimebin'
     binNewPath = '/usr/local/bin/wordtime'
     binCont = '''\
