@@ -8,7 +8,7 @@ here = path.abspath(path.dirname(__file__))
 
 setup(
     name='WordTime',
-    version='0.1',
+    version='1.0',
     description='A macOS menu bar item which tells the time in words.',
     url='https://github.com/Demonstrandum/WordTime',
     author='Demonstrandum',
@@ -26,7 +26,7 @@ setup(
     scripts=['bin/wordtime']
 )
 
-autostart = str(raw_input("Would you like to enable now and on login? [y/n] "))
+autostart = str(raw_input("Would you like to enable now and on login? [y/n] ")).upper()
 
-if autostart.upper() == "Y" or autostart.upper() == "YES":
+if autostart == "Y" or autostart == "YES":
     import autorun
