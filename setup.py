@@ -1,10 +1,5 @@
 #!/usr/bin/python
 from setuptools import setup, find_packages
-from codecs import open
-from os import path
-import os, stat, sys
-
-here = path.abspath(path.dirname(__file__))
 
 setup(
     name='WordTime',
@@ -15,7 +10,7 @@ setup(
     author_email='knutsen@jetspace.co',
     license='GPL-3.0',
     classifiers=[
-        'Development Status :: 3 - Alpha',
+        'Development Status :: 5 - Production/Stable',
         'Intended Audience :: End Users/Desktop',
         'Operating System :: MacOS :: MacOS X',
         'Programming Language :: Python :: 2',
@@ -26,7 +21,7 @@ setup(
     scripts=['bin/wordtime']
 )
 
-autostart = str(raw_input("Would you like to enable now and on login? [y/n] ")).upper()
+autostart = str(raw_input("\nWould you like to enable now and on login? [y/n] ")).upper()
 
 if autostart == "Y" or autostart == "YES":
     import autorun
