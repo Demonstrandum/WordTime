@@ -23,34 +23,5 @@ setup(
     keywords='simple clock words time fuzzy',
     packages=find_packages(),
     install_requires=['rumps', 'pyobjc'],
+    scripts=['bin/wordtime']
 )
-
-lastArgv = len(sys.argv) - 1
-if sys.argv[lastArgv] == 'install':
-    binName = 'tmpwordtimebin'
-    binNewPath = '/usr/local/bin/wordtime'
-    binCont = '''\
-#!/usr/local/bin/python
-# Hide the ugly python rocketship icon from the Dock.
-import AppKit
-info = AppKit.NSBundle.mainBundle().infoDictionary()
-info["LSBackgroundOnly"] = "1"
-# Start the actual wordtime menubar programme.
-from wordtime import menubar
-menubar.main()
-'''
-    try:
-        os.remove(binNewPath)
-    except:
-        pass
-    print("Making and writing to bin file '" + binName + "'...\n")
-    binFile = open(binName, 'w')
-    binFile.write(binCont)
-    binFile.close()
-
-    print("Making file executable...\n")
-    binStat = os.stat(binName)
-    os.chmod(binName, binStat.st_mode | stat.S_IEXEC)
-
-    print("Moving bin file to bin directory with name: " + binNewPath + "'...\n")
-    os.rename(binName, binNewPath)
