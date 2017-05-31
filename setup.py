@@ -25,3 +25,8 @@ setup(
     install_requires=['rumps', 'pyobjc'],
     scripts=['bin/wordtime']
 )
+
+autostart = str(raw_input("Would you like to enable now and on login? [y/n] "))
+
+if autostart.upper() == "Y" or autostart.upper() == "YES":
+    import autorun
