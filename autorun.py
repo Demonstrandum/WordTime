@@ -6,23 +6,23 @@ def main():
     plistName  = plistLabel + '.plist'
 
     plistCont = '''\
-    <?xml version="1.0" encoding="UTF-8"?>
-    <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
-    <plist version="1.0">
-    <dict>
-        <key>Label</key>
-        <string>com.wordtime.autorun</string>
-        <key>ProgramArguments</key>
-        <array>
-            <string>/usr/local/bin/wordtime</string>
-        </array>
-        <key>StandardErrorPath</key>
-        <string>/dev/null</string>
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+    <key>Label</key>
+    <string>com.wordtime.autorun</string>
+    <key>ProgramArguments</key>
+    <array>
+        <string>/usr/local/bin/wordtime</string>
+    </array>
+    <key>StandardErrorPath</key>
+    <string>/dev/null</string>
 
-        <key>RunAtLoad</key>
-        <true/>
-    </dict>
-    </plist>
+    <key>RunAtLoad</key>
+    <true/>
+</dict>
+</plist>
     '''
     plistNewPath = os.path.expanduser('~') + '/Library/LaunchAgents/' + plistName
 
