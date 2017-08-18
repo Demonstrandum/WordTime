@@ -1,4 +1,4 @@
-#!/usr/local/bin/python
+#!/usr/bin/env python2
 # Hide the ugly python rocketship icon from the Dock.
 import AppKit
 info = AppKit.NSBundle.mainBundle().infoDictionary()
