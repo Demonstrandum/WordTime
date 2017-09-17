@@ -25,7 +25,12 @@ def main():
 </plist>
     '''
     plistNewPath = os.path.expanduser('~') + '/Library/LaunchAgents/' + plistName
-
+    # Sometimes the LaunchAgents dir does not already exist. If it does, this wil raise
+    # an OSError error:
+    try:
+        os.mkdir(os.path.expanduser('~') + '/Library/LaunchAgents/')
+    except OSError: pass # If it exists, good.
+    
     if sys.argv[len(sys.argv) - 1].lower() == 'enable':
         print("Making and writing to .plist file '" + plistName + "'...\n")
         plistFile = open(plistName, 'w')
